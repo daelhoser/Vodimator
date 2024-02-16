@@ -1,6 +1,6 @@
 //
 //  AuthenticationController.swift
-//  vodimator-test
+//  Vodimator
 //
 //  Created by Darren Reely on 2/14/24.
 //
@@ -17,53 +17,51 @@ class AuthenticationController : ObservableObject {
     var password : String?
     var url : String?
     
-    var loginResult : LoginResult?
+    var signInResult : SignInResult?
     
-//    func loginPathFeedback() -> String {
-//        return ServerDetails().loginPath(name: user!, password: password!, server: secretServer)
-//    }
-    
-    func submitLogin() async {
+    func submitSignIn() async {
         guard user?.isEmpty == false && password?.isEmpty == false && url?.isEmpty == false else {
-            print("AuthenticationController - submitLogin() - Require user name, password, and site.")
+            print("AuthenticationController - submitSignIn() - Require user name, password, and site.")
             return
         }
         
-        print("PERFORM LOGIN.")
+        print("PERFORM SIGN IN.")
         authenticationInProgress = true
         
         do {
-            loginResult = try await login()
-            authenticated = loginResult?.userInfo?.auth == 1
-            print("loginResult: \(loginResult)")
+            signInResult = try await signIn()
+            authenticated = signInResult?.userInfo?.auth == 1
+            if let result = signInResult {
+                print("signInResult: \(result)")
+            }
             authenticationInProgress = false
         } catch {
-            loginResult = nil
+            signInResult = nil
             authenticationInProgress = false
             authenticated = false
         }
     }
     
-    func login() async throws -> LoginResult? {
+    func signIn() async throws -> SignInResult? {
         guard let user = user, let password = password else {
             return nil
         }
 
-        let loginPath = ServerDetails().loginPath(name: user, password: password, server: secretServer)
-        print("AuthenticationController.login() - loginPath: \(loginPath)")
+        let signInPath = ServerDetails().signInPath(name: user, password: password, server: secretServer)
+        print("AuthenticationController.signIn() - signInPath: \(signInPath)")
         do {
-            let result = try await URLSession.shared.data(for: URLRequest(url: URL(string: loginPath)!))
+            let result = try await URLSession.shared.data(for: URLRequest(url: URL(string: signInPath)!))
             let decoder = JSONDecoder()
-            print("LOGIN GET COMPLETED.")
+            print("SIGN IN GET COMPLETED.")
             do {
-                let result = try decoder.decode(LoginResult.self, from: result.0)
-                print("LOGIN SUCCESSFUL : \(result)")
+                let result = try decoder.decode(SignInResult.self, from: result.0)
+                print("SIGN IN SUCCESSFUL : \(result)")
                 return result
             } catch {
-                print("FAILED TO DECODE LOGIN RESULT, RETURNING EMPTY RESULT.")
+                print("FAILED TO DECODE SIGN IN RESULT, RETURNING EMPTY RESULT.")
             }
         } catch {
-            print("FAILED TO LOGIN, RETURNING EMPTY RESULT.")
+            print("FAILED TO SIGN IN, RETURNING EMPTY RESULT.")
         }
 
         return nil

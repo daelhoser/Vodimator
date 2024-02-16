@@ -16,6 +16,19 @@
 		B347656C2B7DEFD4006A11A7 /* VodimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347656B2B7DEFD4006A11A7 /* VodimatorTests.swift */; };
 		B34765762B7DEFD4006A11A7 /* VodimatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34765752B7DEFD4006A11A7 /* VodimatorUITests.swift */; };
 		B34765782B7DEFD4006A11A7 /* VodimatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34765772B7DEFD4006A11A7 /* VodimatorUITestsLaunchTests.swift */; };
+		B34765902B7DF0E7006A11A7 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34765862B7DF0E6006A11A7 /* Secrets.swift */; };
+		B34765912B7DF0E7006A11A7 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34765892B7DF0E7006A11A7 /* SignInView.swift */; };
+		B34765922B7DF0E7006A11A7 /* SignInResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347658B2B7DF0E7006A11A7 /* SignInResult.swift */; };
+		B34765932B7DF0E7006A11A7 /* ServerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347658C2B7DF0E7006A11A7 /* ServerDetails.swift */; };
+		B34765942B7DF0E7006A11A7 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347658F2B7DF0E7006A11A7 /* AuthenticationController.swift */; };
+		B34765952B7DF0F2006A11A7 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34765862B7DF0E6006A11A7 /* Secrets.swift */; };
+		B34765962B7DF11B006A11A7 /* ServerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347658C2B7DF0E7006A11A7 /* ServerDetails.swift */; };
+		B34765972B7DF127006A11A7 /* SignInResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347658B2B7DF0E7006A11A7 /* SignInResult.swift */; };
+		B34765982B7DF12F006A11A7 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347658F2B7DF0E7006A11A7 /* AuthenticationController.swift */; };
+		B347659A2B7DF1CA006A11A7 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34765992B7DF1CA006A11A7 /* StringExtensions.swift */; };
+		B347659B2B7DF1CA006A11A7 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34765992B7DF1CA006A11A7 /* StringExtensions.swift */; };
+		B347659D2B7DFF09006A11A7 /* NoticeOfConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347659C2B7DFF09006A11A7 /* NoticeOfConditionsView.swift */; };
+		B347659F2B7E0141006A11A7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347659E2B7E0141006A11A7 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +62,14 @@
 		B34765712B7DEFD4006A11A7 /* VodimatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VodimatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34765752B7DEFD4006A11A7 /* VodimatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VodimatorUITests.swift; sourceTree = "<group>"; };
 		B34765772B7DEFD4006A11A7 /* VodimatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VodimatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B34765862B7DF0E6006A11A7 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		B34765892B7DF0E7006A11A7 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		B347658B2B7DF0E7006A11A7 /* SignInResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInResult.swift; sourceTree = "<group>"; };
+		B347658C2B7DF0E7006A11A7 /* ServerDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerDetails.swift; sourceTree = "<group>"; };
+		B347658F2B7DF0E7006A11A7 /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
+		B34765992B7DF1CA006A11A7 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		B347659C2B7DFF09006A11A7 /* NoticeOfConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeOfConditionsView.swift; sourceTree = "<group>"; };
+		B347659E2B7E0141006A11A7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +120,9 @@
 		B34765532B7DEFD2006A11A7 /* Vodimator */ = {
 			isa = PBXGroup;
 			children = (
+				B34765852B7DF0E6006A11A7 /* Secrets */,
+				B34765842B7DF0E6006A11A7 /* Shared */,
+				B34765872B7DF0E7006A11A7 /* SignIn */,
 				B34765542B7DEFD2006A11A7 /* AppDelegate.swift */,
 				B34765562B7DEFD2006A11A7 /* SceneDelegate.swift */,
 				B34765582B7DEFD2006A11A7 /* ViewController.swift */,
@@ -125,6 +149,67 @@
 				B34765772B7DEFD4006A11A7 /* VodimatorUITestsLaunchTests.swift */,
 			);
 			path = VodimatorUITests;
+			sourceTree = "<group>";
+		};
+		B34765842B7DF0E6006A11A7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B34765992B7DF1CA006A11A7 /* StringExtensions.swift */,
+				B347659C2B7DFF09006A11A7 /* NoticeOfConditionsView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		B34765852B7DF0E6006A11A7 /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				B34765862B7DF0E6006A11A7 /* Secrets.swift */,
+				B347659E2B7E0141006A11A7 /* Constants.swift */,
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
+		B34765872B7DF0E7006A11A7 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				B34765882B7DF0E7006A11A7 /* UI */,
+				B347658A2B7DF0E7006A11A7 /* Models */,
+				B347658D2B7DF0E7006A11A7 /* Presentation */,
+				B347658E2B7DF0E7006A11A7 /* BackendAPI */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		B34765882B7DF0E7006A11A7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B34765892B7DF0E7006A11A7 /* SignInView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B347658A2B7DF0E7006A11A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B347658B2B7DF0E7006A11A7 /* SignInResult.swift */,
+				B347658C2B7DF0E7006A11A7 /* ServerDetails.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B347658D2B7DF0E7006A11A7 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B347658E2B7DF0E7006A11A7 /* BackendAPI */ = {
+			isa = PBXGroup;
+			children = (
+				B347658F2B7DF0E7006A11A7 /* AuthenticationController.swift */,
+			);
+			path = BackendAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +343,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34765922B7DF0E7006A11A7 /* SignInResult.swift in Sources */,
+				B347659F2B7E0141006A11A7 /* Constants.swift in Sources */,
 				B34765592B7DEFD2006A11A7 /* ViewController.swift in Sources */,
+				B34765902B7DF0E7006A11A7 /* Secrets.swift in Sources */,
+				B347659A2B7DF1CA006A11A7 /* StringExtensions.swift in Sources */,
 				B34765552B7DEFD2006A11A7 /* AppDelegate.swift in Sources */,
+				B34765912B7DF0E7006A11A7 /* SignInView.swift in Sources */,
+				B34765942B7DF0E7006A11A7 /* AuthenticationController.swift in Sources */,
+				B347659D2B7DFF09006A11A7 /* NoticeOfConditionsView.swift in Sources */,
+				B34765932B7DF0E7006A11A7 /* ServerDetails.swift in Sources */,
 				B34765572B7DEFD2006A11A7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,7 +361,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B347659B2B7DF1CA006A11A7 /* StringExtensions.swift in Sources */,
+				B34765972B7DF127006A11A7 /* SignInResult.swift in Sources */,
 				B347656C2B7DEFD4006A11A7 /* VodimatorTests.swift in Sources */,
+				B34765962B7DF11B006A11A7 /* ServerDetails.swift in Sources */,
+				B34765982B7DF12F006A11A7 /* AuthenticationController.swift in Sources */,
+				B34765952B7DF0F2006A11A7 /* Secrets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

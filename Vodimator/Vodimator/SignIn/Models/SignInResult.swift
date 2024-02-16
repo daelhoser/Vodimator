@@ -1,13 +1,13 @@
 //
-//  LoginResult.swift
-//  vodimator-test
+//  SignInResult.swift
+//  Vodimator
 //
 //  Created by Darren Reely on 2/14/24.
 //
 
 import Foundation
 
-struct LoginResult: Codable {
+struct SignInResult: Codable {
   var userInfo   : UserInfo?   = UserInfo()
   var serverInfo : ServerInfo? = ServerInfo()
 

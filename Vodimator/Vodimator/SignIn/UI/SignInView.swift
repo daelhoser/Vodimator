@@ -1,17 +1,17 @@
 //
-//  LoginView.swift
-//  vodimator-test
+//  SignInView.swift
+//  Vodimator
 //
 //  Created by Darren Reely on 2/14/24.
 //
 
 import SwiftUI
 
-/* LOGIN
+/* Sign In
  tapping sign in disables field entry and the sign-in button
  keyboard - appropriate kb for each field un, pw, url
-        - move hidden content up so user sees field
-        - keyboard may have 'Done', 'Submit', 'Next' button, if sign-in active then execute the sign-in.
+ - move hidden content up so user sees field
+ - keyboard may have 'Done', 'Submit', 'Next' button, if sign-in active then execute the sign-in.
  disable sign in button util all required fields are filled in and valid
  
  authenticate url format
@@ -22,9 +22,11 @@ import SwiftUI
  logo at top
  
  iptv ? player_api.php ?
-*/
+ */
 
-struct Login : View {
+struct SignInView : View {
+    @Environment(\.colorScheme) var colorScheme
+    
     @StateObject var authentication = AuthenticationController()
     
     @State var nickName : String = ""
@@ -39,11 +41,15 @@ struct Login : View {
     }
     
     var buttonColor : Color {
-        return disabledButton ? .gray : .blue
+        return disabledButton ? .gray : defaultButtonColor
     }
     
     var urlBorderColor : Color {
         return siteUrl.isEmpty ? .gray : siteUrl.isValidURL ? .green : .red
+    }
+    
+    var inputTextColor : Color {
+        return colorScheme == .light ? .black : .white
     }
     
     var body: some View {
@@ -52,17 +58,6 @@ struct Login : View {
                 .fontWeight(.bold)
                 .font(.largeTitle)
             
-//            VStack(alignment: .leading,spacing: 5) {
-//                Text("Your Nick Name")
-//                    .fontWeight(.bold)
-//                TextField("myNickNameKey",
-//                          text: $nickName,
-//                          prompt: Text("Your app identifier"))
-//                .padding(8)
-//                .border(.gray, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-//                .background(Color.black.opacity(0.03))
-//            }
-            
             VStack(alignment: .leading,spacing: 5) {
                 Text("User Name")
                     .fontWeight(.bold)
@@ -70,7 +65,7 @@ struct Login : View {
                           text: $userName,
                           prompt: Text("Required"))
                 .disabled(disableAllInput)
-                .foregroundColor(disableAllInput ? .gray : .black)
+                .foregroundColor(disableAllInput ? .gray : inputTextColor)
                 .padding(8)
                 .border(.gray, width: 1)
                 .background(Color.black.opacity(0.03))
@@ -81,7 +76,7 @@ struct Login : View {
                     .fontWeight(.bold)
                 SecureField("myPasswordKey", text: $password, prompt: Text("Required"))
                     .disabled(disableAllInput)
-                    .foregroundColor(disableAllInput ? .gray : .black)
+                    .foregroundColor(disableAllInput ? .gray : inputTextColor)
                     .padding(8)
                     .border(.gray, width: 1)
                     .background(Color.black.opacity(0.03))
@@ -94,7 +89,7 @@ struct Login : View {
                           text: $siteUrl,
                           prompt: Text("Required"))
                 .disabled(disableAllInput)
-                .foregroundColor(disableAllInput ? .gray : .black)
+                .foregroundColor(disableAllInput ? .gray : inputTextColor)
                 .padding(8)
                 .border(urlBorderColor, width: 2)
                 .background(Color.black.opacity(0.03))
@@ -103,7 +98,7 @@ struct Login : View {
             HStack {
                 Spacer()
                 Button(action: {
-                    login()
+                    signIn()
                 }, label: {
                     Text("Sign In")
                         .fontWeight(.bold)
@@ -117,18 +112,25 @@ struct Login : View {
                 )
                 Spacer()
             }
-            .padding(.top) // add a little extra space above button.
+            .padding(.top, 20) // add a extra gap above button.
             
+            HStack {
+                Spacer()
+                NoticeOfConditionsView()
+                    .padding(.top, 30)
+                    .padding(.bottom, 30)
+                Spacer()
+            } //.border(.blue)
         }
         .padding(.horizontal)
         .border(.red)
     }
     
-    private func login() {
+    private func signIn() {
         print("Signing In...")
         // TEST CODE
         disableAllInput = true
-        let restoreTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
+        let _ = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
             disableAllInput = false
         }
     }
@@ -136,6 +138,6 @@ struct Login : View {
 
 
 #Preview {
-    Login()
+    SignInView()
 }
 

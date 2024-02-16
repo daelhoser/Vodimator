@@ -33,4 +33,54 @@ final class VodimatorTests: XCTestCase {
         }
     }
 
+    
+    func testSignInSuccess() async throws {
+        print("testSignInSuccess() - begin")
+
+        let a = AuthenticationController()
+        a.user = secretUsername
+        a.password = secretPassword
+        a.url = ServerDetails().signInPath(name: a.user!, password: a.password!, server: secretServer)
+        
+        print("testSignInSuccess() - signInPathFeedback: \(a.url!)")
+        
+        let expectation = XCTestExpectation(description: "Sign In Expectation.")
+        
+        Task {
+            await a.submitSignIn()
+            expectation.fulfill()
+        }
+
+        await fulfillment(of: [expectation], timeout: 6)
+        
+        XCTAssert(a.authenticated == true, "FAILED SUCESSFULLY SIGN IN.")
+
+        print("testSignInSuccess() - end.")
+    }
+    
+    func testSignInFails() async throws {
+        print("testSignInFails() - begin")
+
+        let a = AuthenticationController()
+        a.user = "someInvalidUserName"
+        a.password = "someInvalidPasswordForTestingSignInFailer"
+        a.url = ServerDetails().signInPath(name: a.user!, password: a.password!, server: secretServer)
+        
+        print("testSignInFails() - signInPathFeedback: \(a.url!)")
+        print("testSignInFails() - a.authenticated BEFORE \(a.authenticated) - SHOULD BE FALSE")
+        
+        let expectation = XCTestExpectation(description: "Sign In Expectation.")
+        
+        Task {
+            await a.submitSignIn()
+            expectation.fulfill()
+        }
+
+        await fulfillment(of: [expectation], timeout: 6)
+
+        print("testSignInFails() - a.authenticated AFTER \(a.authenticated) - SHOULD STILL BE FALSE")
+        XCTAssert(a.authenticated == false, "FAILED to FAIL SIGN IN.")
+        print("testSignInFails() - end")
+   }
+    
 }
